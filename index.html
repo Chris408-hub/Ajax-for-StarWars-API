@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Star Wars Character Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <section class="grid-con">
+
+      <section class="col-span-full m-col-span-6" id="movie-box">
+        <h2>Movie List:</h2>
+      </section>
+
+      <section class="col-span-full m-col-span-6" id="review-box">
+        <h2>Review</h2>
+        <section id="review-con">
+        </section>
+
+        <template id="review-template">
+          <div>
+            <h3 class="review-heading"></h3>
+            <p class="review-author"></p>
+            <p class="review-description"></p>
+          </div>
+        </template>
+
+      </section>
+
+    </section>  
+  </body>
+</html>
