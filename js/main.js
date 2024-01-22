@@ -1,36 +1,37 @@
 (() => {
-    const movieBox = document.querySelector('#movie-box');
-    const reviewTemplate = document.querySelector('#review-template');
-    const reviewCon = document.querySelector('#review-con');
-    const baseUrl = `https://search.imdbot.workers.dev/`
+    const characterBox = document.querySelector('#character-box');
+    const movieCon = document.querySelector('#movie-con');
+    const movieTemplate = document.querySelector('#movie-template');
+    const baseUrl = `https://swapi.dev/api/`
 
     //make first ajax call
 
-    function getMovies() {
-        fetch(`${baseUrl}?q=speed`)
+    function getCharacters() {
+        fetch(`${baseUrl}/people`)
         .then(response => response.json())
-        .then(function (response) {
-            console.log(response.description);
-            //store description array(list of moives)in movies
-            const movies = response.description;
+            .then(function (response) {
+            console.log(response.results);
+
+            //store description array(list of characters)in characters
+            const characters = response.results;
             const ul = document.createElement('ul');
 
-            movies.forEach(movie => {
+            characters.forEach(character => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                console.log(movie['#TITLE']);
-                a.textContent = movie['#TITLE'];
-                a.dataset.review = movie['#IMDB_ID'];
+                // console.log(character.name);
+                console.log(character['name']);
+                a.textContent = character['name'];
                 li.appendChild(a);
                 ul.appendChild(li);
                 
             });
-            movieBox.appendChild(ul);
+            characterBox.appendChild(ul);
         })
             .then(function () {
-                const links = document.querySelectorAll('#movie-box li a')
+                const links = document.querySelectorAll('#character-box li a')
                 links.forEach(link => {
-                    link.addEventListener('click', getReview);
+                    link.addEventListener('click', getInfo);
                 })
             })
             
@@ -40,26 +41,26 @@
             }
         )
         
-        function getReview(e) {
+        function getInfo(e) {
             // console.log('getReview called');
             // console.log(e.currentTarget.dataset.review);
             // console.log(this.dataset.review);
-            const reviewID = e.currentTarget.dataset.review;
+            const InfoID = e.currentTarget.dataset.review;
             //https://search.imdbot.workers.dev/?tt=tt0111257
 
 
-            fetch(`${baseUrl}?tt=${reviewID}`)
+            fetch(`${baseUrl}/${InfoID}`)
             .then(response => response.json())
                 .then(function (response) {
                     console.log(response);
                     // console.log(response.short.review.reviewBody);
 
                 // clear out reviewCon
-                reviewCon.innerHTML = '';
-                const template = document.importNode(reviewTemplate.content, true);
-                const reviewBody = template.querySelector('.review-description');
-                reviewBody.innerHTML = response.short.review.reviewBody;
-                reviewCon.appendChild(template);
+                movieCon.innerHTML = '';
+                const template = document.importNode(movieTemplate.content, true);
+                const movieBody = template.querySelector('.movie-opening');
+                movieBody.innerHTML = response.short.movie.movieBody;
+                movieCon.appendChild(template);
             })
             .catch(error => {
                 console.log(error);
@@ -69,7 +70,7 @@
     }
 
     // call the function to load list
-    getMovies();
+    getCharacters();
 
 })();
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script defer src="js/main.js"></script>
@@ -14,20 +14,20 @@
   <body>
     <section class="grid-con">
 
-      <section class="col-span-full m-col-span-6" id="movie-box">
-        <h2>Movie List:</h2>
+      <section class="col-span-full m-col-span-6" id="character-box">
+        <h2>Character List:</h2>
       </section>
 
-      <section class="col-span-full m-col-span-6" id="review-box">
-        <h2>Review</h2>
-        <section id="review-con">
+      <section class="col-span-full m-col-span-6" id="movie-box">
+        <h2>Movie Info</h2>
+        <section id="movie-con">
         </section>
 
-        <template id="review-template">
+        <template id="movie-template">
           <div>
-            <h3 class="review-heading"></h3>
-            <p class="review-author"></p>
-            <p class="review-description"></p>
+            <h3 class="movie-title"></h3>
+            <p class="movie-opening"></p>
+            <img src="" alt="movie-poster"></img>
           </div>
         </template>
 
