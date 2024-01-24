@@ -1,4 +1,5 @@
 (() => {
+    const loadingIcon = document.querySelector('#loading-icon');
     const characterBox = document.querySelector('#character-box');
     const movieBox = document.querySelector('#movie-box');
     const movieCon = document.querySelector('#movie-con');
@@ -7,10 +8,14 @@
 
     //make first ajax call
 
+    // loadingIcon.style.display = 'block';
+
     function getCharacters() {
+        
         fetch(`${baseUrl}/people`)
         .then(response => response.json())
             .then(function (response) {
+            loadingIcon.style.display = 'none';
             console.log(response.results);
 
             //store description array(list of characters)in characters
