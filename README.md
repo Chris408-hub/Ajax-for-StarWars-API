@@ -8,10 +8,14 @@ The primary goal of this project is to utilize the SWAPI to fetch and display in
 
 ## Features
 
-Responsive design
-GreenSock enhancements
-HTML Template
-AJAX Request
+Responsive design  
+
+GreenSock enhancements  
+
+HTML Template  
+
+AJAX Request  
+
 Loading Icon
 
 
