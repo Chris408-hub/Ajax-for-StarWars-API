@@ -8,8 +8,6 @@
 
     //make first ajax call
 
-    // loadingIcon.style.display = 'block';
-
     function getCharacters() {
         
         fetch(`${baseUrl}/people`)
@@ -25,11 +23,11 @@
             characters.forEach(character => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                // console.log(character.name);
-                console.log(character['name']);
-                a.textContent = character['name'];
+                console.log(character.name);
+                a.textContent = character.name;
                 console.log(character.films[0]);
                 a.dataset.link = character.films[0];
+                a.dataset.poster = `${character.name}.jpeg`;
 
 
                 li.appendChild(a);
@@ -54,7 +52,10 @@
         function getInfo(e) {
             console.log('getInfo called');
             console.log(this.dataset.link);
+            console.log(this.dataset.poster);
+
             const secondUrl = this.dataset.link;
+            const posterSrc = this.dataset.poster;
             movieBox.style.display = 'block';
 
 
@@ -71,11 +72,11 @@
                 const template = document.importNode(movieTemplate.content, true);
                 const movieTitle = template.querySelector('.movie-title');
                 const movieOpening = template.querySelector('.movie-opening');
-                // const moviePoster = template.querySelector('img');
+                const moviePoster = template.querySelector('.movie-poster');
 
                 movieTitle.textContent = response.title;
                 movieOpening.textContent = response.opening_crawl;
-                // moviePoster.src = `images/${}.jpg`;
+                moviePoster.src = `images/${posterSrc}`;
 
                 movieCon.appendChild(template);
             })
