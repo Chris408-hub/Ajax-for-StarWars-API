@@ -21,7 +21,8 @@ Loading Icon
 
 ## Acknowledgments
 
-Star Wars API (SWAPI): https://swapi.dev
+Star Wars API (SWAPI): https://swapi.dev  
+
 GreenSock Animation Platform: https://greensock.com
 
 ## Credits
