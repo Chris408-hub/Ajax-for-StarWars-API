@@ -1,18 +1,20 @@
+body{
+    background-color: #000000;
+}
+
 ul li a {
     cursor: pointer;
     text-decoration: none;
+    margin-top: 20px;
 }
 
-#movie-box{
-    display: none;
+
+#content{
+
+    background-image:url('../images/bg.jpeg') no-repeat;
 }
 
 // #character-box, #movie-box{
-//     height: 80%;
-//     width: 45%;
-//     background-color: rgba(0, 0, 0, 0.5);
+//     margin: 20px,auto;
+//     margin-left: 30px;
 // }
-
-#character-box, #movie-box{
-    margin-left: 30px;
-}
