@@ -1,4 +1,4 @@
-p, h1, h2, h3 {
+a, p, h1, h2, h3 {
 font-family: 'Exo 2', sans-serif;
 color: #fff;
 
@@ -8,19 +8,23 @@ p {
     margin-bottom: 20px;
     font-weight: 300;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 35px;
 }
 
 h2 {
-    margin-top: 50px;
+    margin-top: 150px;
     font-weight: 500;
     font-size: 26px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    
 }
 
 h3 {
+    margin-top: 50px;
+    margin-bottom: 15px;
     font-weight: 600;
     font-size: 18px;
+
 }
 
 

@@ -9,19 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="js/SplitText.js"></script>
     <script defer src="js/main.js"></script>
   </head>
   <body> 
+
+    <header class="grid-con" id="index-main-header">
+    <div class="col-span-full m-col-start-4 m-col-end-8" id="logo">
+        <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+    </div>
+    </header>
+    
+    <hr id="h-line">
+
     <section class="grid-con" id="content">
 
+
       <section class="col-span-full m-col-span-6" id="character-box">
-        <h2>Character List:</h2>
+        <h2>CHARACTER LIST</h2>
+        <p><span class="color">CLICK</span>character to show more info...</p>
         <div id="loading-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_9Mto{animation:spinner_5GqJ 1.6s linear infinite;animation-delay:-1.6s}.spinner_bb12{animation-delay:-1s}@keyframes spinner_5GqJ{12.5%{x:13px;y:1px}25%{x:13px;y:1px}37.5%{x:13px;y:13px}50%{x:13px;y:13px}62.5%{x:1px;y:13px}75%{x:1px;y:13px}87.5%{x:1px;y:1px}}</style><rect class="spinner_9Mto" x="1" y="1" rx="1" width="10" height="10"/><rect class="spinner_9Mto spinner_bb12" x="1" y="1" rx="1" width="10" height="10"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_9Mto{animation:spinner_5GqJ 1.6s linear infinite;animation-delay:-1.6s;fill: white;}.spinner_bb12{animation-delay:-1s;fill: white;}@keyframes spinner_5GqJ{12.5%{x:13px;y:1px}25%{x:13px;y:1px}37.5%{x:13px;y:13px}50%{x:13px;y:13px}62.5%{x:1px;y:13px}75%{x:1px;y:13px}87.5%{x:1px;y:1px}}</style><rect class="spinner_9Mto" x="1" y="1" rx="1" width="10" height="10"/><rect class="spinner_9Mto spinner_bb12" x="1" y="1" rx="1" width="10" height="10"/></svg>
         </div>
       </section>
       <section class="col-span-full m-col-span-6" id="movie-box">
-        <h2>Movie Info</h2>
+        <h2>MOVIE INFO</h2>
         <section id="movie-con">
         </section>
 
@@ -36,5 +49,11 @@
       </section>
 
     </section>  
+
+    <!-- <footer class="grid-con" id="main-footer">
+        <p class="col-span-full" >2024 © STARWAR. All rights reserved.</p>
+    </footer> -->
+
   </body>
+
 </html>
