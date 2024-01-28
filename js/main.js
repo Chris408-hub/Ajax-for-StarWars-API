@@ -6,8 +6,24 @@
     const movieTemplate = document.querySelector('#movie-template');
     const baseUrl = `https://swapi.dev/api/`
 
-    //make first ajax call
+    //adding greenSock SplitText
+    gsap.registerPlugin(SplitText);
+    const titles = document.querySelectorAll('h2');
+    titles.forEach(title => {
 
+        const split = new SplitText(title, { type: 'chars' });
+
+        const typingText = gsap.timeline()
+            .from(split.chars, {
+                duration: .1,
+                autoAlpha: 0,
+                stagger: {
+                    each: .1
+                }
+            });
+    });
+
+    //make first ajax call
     function getCharacters() {
         
         fetch(`${baseUrl}/people`)
@@ -29,9 +45,10 @@
                 a.dataset.link = character.films[0];
                 a.dataset.poster = `${character.name}.jpeg`;
 
-
+                
                 li.appendChild(a);
                 ul.appendChild(li);
+
                 
             });
             characterBox.appendChild(ul);
@@ -79,6 +96,9 @@
                 moviePoster.src = `images/${posterSrc}`;
 
                 movieCon.appendChild(template);
+                    
+
+
             })
             .catch(err => {
                 console.log(err);

@@ -1,3 +1,18 @@
 #movie-box{
     display: none;
 }
+    
+.movie-opening{
+    color: yellow;
+    animation: crawl 1s linear;
+}
+
+@keyframes crawl {
+from {
+    transform: translateY(50%);
+}
+to {
+    transform: translateY(0);
+}
+}
+
