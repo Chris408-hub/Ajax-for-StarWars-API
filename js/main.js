@@ -4,7 +4,7 @@
     const movieBox = document.querySelector('#movie-box');
     const movieCon = document.querySelector('#movie-con');
     const movieTemplate = document.querySelector('#movie-template');
-    const baseUrl = `https://swapi.dev/api/`
+    const baseUrl = `https://swapi.dev/api/`;
 
     //adding greenSock SplitText
     gsap.registerPlugin(SplitText);
@@ -28,7 +28,7 @@
         .then(response => response.json())
             .then(function (response) {
             loadingIcon.style.display = 'none';
-            console.log(response.results);
+            // console.log(response.results);
 
             //store description array(list of characters)in characters
             const characters = response.results;
@@ -37,9 +37,9 @@
             characters.forEach(character => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                console.log(character.name);
+                // console.log(character.name);
                 a.textContent = character.name;
-                console.log(character.films[0]);
+                // console.log(character.films[0]);
                 a.dataset.link = character.films[0];
                 a.dataset.poster = `${character.name}.jpeg`;
 
@@ -65,9 +65,11 @@
         )
         
         function getInfo(e) {
-            console.log('getInfo called');
-            console.log(this.dataset.link);
-            console.log(this.dataset.poster);
+            // console.log('getInfo called');
+            // console.log(this.dataset.link);
+            // console.log(this.dataset.poster);
+            const bg = document.querySelector('#content');
+            bg.classList.add('bg');
 
             const secondUrl = this.dataset.link;
             const posterSrc = this.dataset.poster;
@@ -78,8 +80,8 @@
          
             .then(response => response.json())
                 .then(function (response) {
-                    console.log(response);
-                    console.log(response.title);
+                    // console.log(response);
+                    // console.log(response.title);
 
                 movieCon.innerHTML = '';
                 // const InfoID = response.episode_id;
