@@ -8,20 +8,18 @@
 
     //adding greenSock SplitText
     gsap.registerPlugin(SplitText);
-    const titles = document.querySelectorAll('h2');
-    titles.forEach(title => {
 
-        const split = new SplitText(title, { type: 'chars' });
+    const split = new SplitText('.split', { type: 'chars' });
 
-        const typingText = gsap.timeline()
-            .from(split.chars, {
-                duration: .1,
-                autoAlpha: 0,
-                stagger: {
-                    each: .1
-                }
-            });
-    });
+    const typingText = gsap.timeline()
+        .from(split.chars, {
+            duration: .1,
+            autoAlpha: 0,
+            stagger: {
+                each: .1
+            }
+        });
+
 
     //make first ajax call
     function getCharacters() {
